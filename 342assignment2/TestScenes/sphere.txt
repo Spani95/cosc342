@@ -1,0 +1,22 @@
+Scene
+    ambientLight 0.2 0.2 0.2
+    renderSize 200 150
+    BackgroundColour 0.2 0.2 0.2
+    filename TestScenes/sphere.png
+End
+
+Object Sphere
+    Colour 1 0 0
+End
+
+Camera PinholeCamera 3
+    translate 0 0 -10 
+End
+
+Light PointLight
+    Location -5 0 -10
+    Colour 50 50 50 
+End
+
+
+

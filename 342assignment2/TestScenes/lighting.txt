@@ -1,0 +1,143 @@
+# Note that this scene is quite large, and not recommended for rapid development testing
+Scene
+    ambientLight 0.2 0.2 0.2
+    renderSize 800 600
+    BackgroundColour 0.2 0.2 0.2
+    filename TestScenes/lighting.png
+End
+
+
+### BACK ROW OF SPHERES
+
+Object Sphere
+    Colour 1 0 1
+    translate -7.5 -3 6
+End
+
+
+Object Sphere
+    Colour 1 0 0
+    translate -5 -3 6
+End
+
+Object Sphere
+    Colour 1 1 0
+    translate -2.5 -3 6
+End
+
+Object Sphere
+    Colour 0 1 0
+    translate 0 -3 6
+End
+
+
+Object Sphere
+    Colour 0 1 1
+    translate 2.5 -3 6
+End
+
+Object Sphere
+    Colour 0 0 1
+    translate 5 -3 6
+End
+
+Object Sphere
+    Colour 1 0 1
+    translate 7.5 -3 6
+End
+
+### MIDDLE ROW OF SPHERES
+
+Object Sphere 
+    Colour 1 1 1
+    Translate -6.25 -2 4
+End
+
+Object Sphere 
+    Colour 1 1 1
+    Specular 0.2 0.2 0.2 100
+    Translate -3.75 -2 4
+End
+
+Object Sphere 
+    Colour 1 1 1
+    Specular 0.4 0.4 0.4 100
+    Translate -1.25 -2 4
+End
+
+Object Sphere 
+    Colour 1 1 1
+    Specular 0.6 0.6 0.6 100
+    Translate 1.25 -2 4
+End
+
+Object Sphere 
+    Colour 1 1 1
+    Specular 0.8 0.8 0.8 100
+    Translate 3.75 -2 4
+End
+
+Object Sphere 
+    Colour 1 1 1
+    Specular 1 1 1 100
+    Translate 6.25 -2 4
+End
+
+### FRONT ROW OF SPHERES
+
+Object Sphere
+    Colour 0.6 0.3 0.2
+    Specular 1 1 1 100
+    Mirror 0.4 0.2 0.1
+    Translate -5 -1 2
+End
+
+Object Sphere
+    Colour 0.6 0.5 0.2
+    Specular 1 1 1 100
+    Mirror 0.6 0.5 0.2
+    Translate -2.5 -1 2
+End
+
+Object Sphere
+    Colour 1 1 1
+    Specular 1 1 1 100
+    Mirror 0.9 0.9 0.9
+    Translate 0 -1 2
+End
+
+Object Sphere
+    Colour 0.5 0.5 0.6
+    Specular 1 1 1 100
+    Mirror 0.8 0.8 0.8
+    Translate 2.5 -1 2
+End
+
+Object Sphere
+    Colour 0.4 0.4 0.4
+    Specular 1 1 1 100
+    Mirror 0.2 0.2 0.2
+    Translate 5 -1 2
+End
+
+Camera PinholeCamera 3
+    rotate X -15
+    translate 0 -8 -15
+End
+
+Light PointLight
+    Location 5 -10 0
+    Colour 30 30 30 
+End
+
+Light PointLight
+    Location 0 -15 0
+    Colour 30 30 30 
+End
+
+Light PointLight
+    Location -5 -10 0
+    Colour 30 30 30
+End
+
+

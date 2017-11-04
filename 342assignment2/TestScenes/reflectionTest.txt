@@ -1,0 +1,83 @@
+#Test secene to check reflections
+Scene
+    ambientLight 0.2 0.2 0.2
+    renderSize 300 200
+    BackgroundColour 1.0 1.0 1.0
+    filename TestScenes/reflectionTest.png
+End
+
+Object Sphere
+    Colour 1 1 1
+    Specular 1 1 1 200
+    Mirror 0.5 0.5 0.5
+    Translate 3 0 0.8
+End
+
+Object Sphere
+    Colour 0.6 0.3 0.2
+    Specular 1 1 1 200
+    Mirror 0.3 0.6 0.4
+    Translate 2 -2 0.8
+End
+
+Object Sphere
+    Colour 0.2 0.8 0.7
+    Specular 1 1 1 200
+    Mirror 0.8 0.1 0.3
+    Translate -2 -2 0.8
+End
+
+Object Sphere
+    Colour 0.9 0.5 0.7
+    Specular 1 1 1 200
+    Mirror 0.9 0.2 0.5
+    Translate 0 -3 0.8
+End
+
+Object Sphere
+    Colour 0.6 0.8 0.2
+    Specular 1 1 1 200
+    Mirror 0.5 0.8 0.1
+    Translate 0 3 0.8
+End
+
+Object Sphere
+    Colour 0.3 0.2 0.2
+    Specular 1 1 1 200
+    Mirror 0.3 0.4 0.1
+    Translate 2 2 0.8
+End
+
+Object Sphere
+    Colour 0.7 0.3 0.2
+    Specular 1 1 1 200
+    Mirror 0.4 0.4 0.4
+    Translate -2 2 0.8
+End
+
+Object Sphere
+    Colour 0.2 0.8 0.2
+    Specular 1 1 1 200
+    Mirror 0.5 0.5 0.5
+    Translate -3 0 0.8
+End
+
+Camera PinholeCamera 3
+    translate  0 0 -20
+End
+
+Light PointLight
+    Location 4 -5 -13
+    Colour 30 30 30
+End
+
+Light PointLight
+    Location -2 -9 5
+    Colour 30 30 30
+End
+
+Light PointLight
+    Location -6 -6 5
+    Colour 30 30 30
+End
+

@@ -1,0 +1,62 @@
+/** \mainpage
+ *
+ * <b> Overview </b>
+ *
+ * This is the skeleton project for the ray tracer assignment for <a href="http://cs.otago.ac.nz/cosc342">COSC342</a>.
+ * It provides a minimal implementation that ray traces spheres with ambient illumination. 
+ * For the assignment, there are a number of tasks to be completed, which are summarised on the <a href="todo.html">TODO</a> page.
+ * 
+ * The core of the ray tracer is a Scene object. This contains a number of Object instances which are 
+ * to be drawn. There are three different types of Object - Sphere, Cone, and CSG. An implementation
+ * is provided for Sphere, and a partial implementation of CSG, but you must provide the implementation
+ * for Cone and complete the implementaton of CSG.
+ *
+ * The appearance of an Object is determined by its Material. The Material provides details about the
+ * Object's colour under ambient, specular, and diffuse lighting, as well as properties related to 
+ * mirror reflections. These are used in Scene::computeColour() to determine what Colour is seen by 
+ * a Ray cast into the Scene. However the current implementation only deals with ambient lighting  
+ * and needs to be extended to deal with diffuse and specular lighting, shadows, and mirror reflections.
+ *
+ * An image is rendered by a virtual Camera. Currently only one type of Camera (PinholeCamera) is supported.
+ * This represents a virtual pinhole camera centred at the origin and looking along the positive \f$Z\f$-axis.
+ * See the section on Co-ordinate Frames, below for more details about the choice of axes.
+ *
+ * Finally, the Scene contains various LightSource objects that provide illumination.
+ * A LightSource affects the appearance of an Object via its Material, as discussed above.
+ * There is only one type of LightSource implemented - PointLightSource - and it is already
+ * implemented within the skeleton code.
+ *
+ * Finally, a range of Transform options are available, such as rotation, translation, and scaling. 
+ * These can be applied to an Object or Camera. A Transform is also able to distinguish between
+ * a Point, a Direction, and a Normal in 3D and alter them appropriately.
+ *
+ * <b> Co-ordinate Frames </b>
+ *
+ * There are a number of co-ordinate frames that are of interest to us in ray tracing.
+ * The first of these is the 3D co-ordinate frame that we model objects in. There
+ * are a number of options for this, but this implementation uses the following model:
+ * - The view point for tracing rays is, by default, at the origin, looking along the 
+ *   positive \f$Z\f$-axis.
+ * - The \f$X\f$-axis runs from left to right when looking along the \f$Z\f$-axis.
+ * - We assume a right-handed co-ordinate frame, and so the positive \f$Y\f$-axis points down.
+ *
+ * This decision aligns well with the usual interpretation of 2D pixel co-ordinates. 
+ * The co-ordinates, \f$(x_p,y_p)\f$ of a pixel are taken from the top-left of the image. 
+ * This gives a \f$x_p\f$ axis that runs from left to right, and a \f$y_p\f$ axis running from top top bottom.
+ *
+ * An intermediate 2D co-ordinate frame, \f$(x_i,y_i)\f$, is also useful, which has its origin in the centre
+ * of the image plane, at some point along the positive \f$Z\f$-axis.
+ * These co-ordinates are illustrated in the image below.
+ *
+ * \image html coords.png
+ * \image latex coords.eps
+ *
+ * There are a few consequences of this choice of co-ordinate frame to keep in mind:
+ * - 'Left' and 'Right' correspond to the negative and positive \f$X\f$ directions respectively.
+ * - 'Up' is now the \em negative \f$Y\f$-axis, and 'Down' is the \em positive \f$Y\f$-axis.
+ * - 'Forward', or away from the view point, is the positive \f$Z\f$-axis, and 'Back', or toward the view point 
+ *   is the negative \f$Z\f$-axis.
+ *
+ * The \f$X\f$ axis is fairly intuitive, and the \f$Z\f$ interpretation is not too bad, but the \f$Y\f$ axis 
+ * needs a bit of care since a negative shift moves objects 'up', while a positive translation shifts them 'down'.
+ */

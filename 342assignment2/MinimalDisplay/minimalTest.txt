@@ -1,0 +1,106 @@
+Scene
+    ambientLight 0.2 0.2 0.2
+    backgroundColour 0.75 1.0 1.0
+    renderSize 400 300
+    filename sample.ppm
+End
+
+# A big world to put things on
+
+Object Cube
+    Colour 1 1 1
+    Scale3 10 0.5 10
+End
+
+# A snowman
+
+Object Sphere # Snowman's body
+    Colour 1 1 1
+    Translate 0 -1 0
+End
+
+Object Sphere # Snowman's torso
+    Colour 1 1 1
+    Scale 0.67
+    Translate 0 -2.5 0
+End
+
+Object Sphere # Snowman's head
+    Colour 1 1 1
+    Scale 0.5
+    Translate 0 -3.5 0
+End
+
+Object Sphere # Button1
+     Colour 0.25 0.25 0.25
+     Specular 1 1 1 100
+     Scale 0.1
+     Translate 0 -2.25 -0.63
+     Rotate Y -30
+End
+
+Object Sphere # Button2
+     Colour 0.25 0.25 0.25
+     Specular 1 1 1 100
+     Scale 0.1
+     Translate 0 -2.5 -0.67
+     Rotate Y -30
+End
+
+Object Sphere # Button3
+     Colour 0.25 0.25 0.25
+     Specular 1 1 1 100
+     Scale 0.1
+     Translate 0 -2.75 -0.63
+     Rotate Y -30
+End
+
+Object Sphere # Eye 1
+     Colour 0.25 0.25 0.25
+     Specular 1 1 1 100
+     Scale 0.1
+     Translate 0 -3.75 -0.45
+     Rotate Y -45
+End
+
+Object Sphere # Eye 2
+     Colour 0.25 0.25 0.25
+     Specular 1 1 1 100
+     Scale 0.1
+     Translate 0 -3.75 -0.45
+     Rotate Y -15
+End
+
+Object Sphere # Carrot nose
+    Colour 1 0.5 0
+    Scale3 0.1 0.1 0.5
+    Translate 0 -3.5 -0.5
+    Rotate Y -30
+End
+
+Object Sphere # Jaunty beret
+    Colour 1 0 0
+    Scale3 0.5 0.1 0.5
+    Rotate Z -10
+    Rotate X 10
+    Translate 0 -4 0
+End
+
+camera pinholecamera 1
+    translate 0 -3 -5 # Move camera back and up
+    rotate X -10 # look down a bit
+    translate 0 1 0
+end
+
+light pointlight
+    location 10 -10 0
+    colour 100 100 100
+end
+
+light pointlight
+    location 0 -10 -10
+    colour 50 50 50
+end
+
+
+
